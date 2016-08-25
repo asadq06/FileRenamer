@@ -67,10 +67,10 @@ class Window(QtGui.QWidget):
 
         for f in listFiles:
             fName, fExtension =  os.path.splitext(f)
-            if(self.pythonRegexCheck.isChecked()) :
-                fName = re.sub(self.originalFilePattern.text(), self.newFilePattern.text(),fName, flags=re.I)
-                print(fName)
-                os.rename(f,fName+fExtension)
+
+            fName = re.sub(self.originalFilePattern.text(), self.newFilePattern.text(),fName, flags=re.I)
+            #print(fName)
+            os.rename(f,fName+fExtension)
 
 def main():
     app = QtGui.QApplication(sys.argv)
